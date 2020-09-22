@@ -2,7 +2,7 @@
 
 ## Get your API Key
 go to the [Open Weather Map Website](https://openweathermap.org/api)
-follow the sign up prompts to get your free API key
+and follow the sign up prompts to get your free API key
 
 ## Add key to project
 Locate the WeatherAPI.cs file under Models and replace the API_KEY string to your key
