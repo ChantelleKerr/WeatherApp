@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="WeatherApp.SunriseSunsetPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Image Source="/Assets/Images/BackIMG.png" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+        <Image Source="/Assets/Images/sun.png" Height="300" Grid.RowSpan="3" Grid.ColumnSpan="3" Opacity=".75"/>
+
+        <Button x:Name="close" Click="close_Click" Grid.Row="0" Grid.Column="2" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,0,10,0">
+            <Image Source="/Assets/Images/close.png" Opacity="0.75"/>
+        </Button>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="-20" HorizontalAlignment="Center">
+            <TextBlock Text="SUNRISE" FontSize="64" Foreground="#628995" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="sunriseTime" Text="5:13 AM" FontSize="48" Foreground="#4C6B75" HorizontalTextAlignment="Center"/>
+        </StackPanel>
+        
+        <TextBlock x:Name="todaysDate" Grid.Row="1" Grid.Column="1" Text="11/06/2020" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" Opacity=".75"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="-20">
+            <TextBlock x:Name="sunsetTime" Text="6:13 PM" FontSize="48" HorizontalTextAlignment="Center" Foreground="#853D3D"/>
+            <TextBlock Text="SUNSET" FontSize="64" HorizontalAlignment="Center" Foreground="#A34A4A"/>
+        </StackPanel>
+    </Grid>
+</Page>

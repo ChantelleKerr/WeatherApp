@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="WeatherApp.WeatherUpdatesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.1"/>
+                <GradientStop x:Name="appBG" Color="#6EA0B5" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="Back_Button" Click="Back_Button_Click" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,0,10,0">
+            <Image Source="/Assets/Images/close.png" Opacity="0.75"/>
+        </Button>
+        <TextBlock Text="3 Hour Forecast" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="title_txt" Style="{StaticResource DarkBlueTitle}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Spacing="90" HorizontalAlignment="Center">
+            <TextBlock Text="Date Time  " FontSize="12" x:Name="dateTime_txt" Style="{StaticResource LightBlueTitle}"/>
+            <TextBlock Text="Temp       " FontSize="12" x:Name="temp_txt" Style="{StaticResource LightBlueTitle}"/>
+            <TextBlock Text="Humidity   " FontSize="12" x:Name="humidity_txt" Style="{StaticResource LightBlueTitle}"/>
+            <TextBlock Text="Pressure   " FontSize="12" x:Name="press_txt" Style="{StaticResource LightBlueTitle}"/>
+            <TextBlock Text="Sea Level  " FontSize="12" x:Name="sea_txt" Style="{StaticResource LightBlueTitle}"/>
+            <TextBlock Text="Ground Level" FontSize="12" x:Name="grnd_txt" Style="{StaticResource LightBlueTitle}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListView x:Name="weatherLV" Grid.Row="1" Margin="-90,0,0,0">
+                <ListView.ItemTemplate  >
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Spacing="100" x:Name="item" >
+                            <TextBlock Text="{Binding DtString}" FontSize="14" x:Name="dt_txt" Style="{StaticResource DarkBlueTitle}" />
+                            <TextBlock Text="{Binding Temp}" FontSize="14" Style="{StaticResource DarkBlueTitle}" Margin="-40,0,0,0"/>
+                            <TextBlock Text="{Binding Humidity}" FontSize="14" x:Name="hum" Style="{StaticResource DarkBlueTitle}" Margin="-10,0,0,0"/>
+                            <TextBlock Text="{Binding Pressure}" FontSize="14" x:Name="press" Style="{StaticResource DarkBlueTitle}" Margin="20,0,0,0"/>
+                            <TextBlock Text="{Binding Sea_Level}" FontSize="14" x:Name="sea" Style="{StaticResource DarkBlueTitle}" />
+                            <TextBlock Text="{Binding Grnd_Level}" FontSize="14" x:Name="ground" Style="{StaticResource DarkBlueTitle}" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        
+    </Grid>
+</Page>

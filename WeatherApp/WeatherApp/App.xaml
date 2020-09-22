@@ -1,0 +1,67 @@
+﻿<Application
+    x:Class="WeatherApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp">
+
+
+    <Application.Resources>
+        <!-- Text Titles -->
+        <Style x:Key="DarkBlueTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#2D3B48"/>
+        </Style>
+        <Style x:Key="DarkPurpleTitle" TargetType="TextBlock" >
+            <Setter Property="Foreground" Value="#392D48"/>
+        </Style>
+        <Style x:Key="DarkGreenTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#2D4348"/>
+        </Style>
+        
+        <Style x:Key="LightBlueTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#6D869E"/>
+        </Style>
+        <Style x:Key="LightPurpleTitle" TargetType="TextBlock" >
+            <Setter Property="Foreground" Value="#836D9E"/>
+        </Style>
+        <Style x:Key="LightGreenTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#6D9E95"/>
+        </Style>
+        <!-- Buttons -->
+        <Style x:Key="BlueButton" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                        <GradientStop Color="#A0DFF3" Offset="-0.1"/>
+                        <GradientStop Color="#CAE7F6" Offset="0.40"/>
+                        <GradientStop Color="#CAE7F6" Offset="0.60"/>
+                        <GradientStop Color="#B1DCFB" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PurpleButton" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                        <GradientStop Color="#D7B7FF" Offset="-0.1"/>
+                        <GradientStop Color="#E5D2FD" Offset="0.50"/>
+                        <GradientStop Color="#D7B7FF" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GreenButton" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                        <GradientStop Color="#B8FFB7" Offset="-0.1"/>
+                        <GradientStop Color="#D2FDD6" Offset="0.50"/>
+                        <GradientStop Color="#B8FFB7" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

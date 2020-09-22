@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="WeatherApp.PropertiesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.1"/>
+                <GradientStop x:Name="appBG" Color="#6EA0B5" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="Back_Button" Click="Back_Button_Click" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,0,10,0">
+            <Image Source="/Assets/Images/close.png" Opacity="0.75"/>
+        </Button>
+        <TextBlock x:Name="Title" Text="Application Preferences" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Style="{StaticResource DarkBlueTitle}"/>
+        
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="SoundTitle" Text="SOUND" VerticalAlignment="Center" Foreground="#2D3B48" Margin="0,0,60,0" Style="{StaticResource DarkBlueTitle}"/>
+                <ToggleSwitch x:Name="soundToggle" Toggled="soundToggle_Toggled" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="MetricTitle" Text="METRIC" VerticalAlignment="Center" Foreground="#2D3B48" Margin="0,0,60,0" Style="{StaticResource DarkBlueTitle}"/>
+                <ToggleSwitch x:Name="metricToggle" Toggled="metricToggle_Toggled"/>
+            </StackPanel>
+            <ComboBox Grid.Row="1" x:Name="locationCB" Width="200" SelectionChanged="locationCB_SelectionChanged"
+              Header="City" PlaceholderText="Select a city" Foreground="#2D3B48">
+                <x:String>Perth</x:String>
+                <x:String>Brisbane</x:String>
+                <x:String>Sydney</x:String>
+                <x:String>Melbourne</x:String>
+            </ComboBox>
+            <ComboBox Grid.Row="1" x:Name="colorSchemeCB" Width="200"
+              Header="Colour Scheme" PlaceholderText="Select a colour" Foreground="#2D3B48" SelectionChanged="colorSchemeCB_SelectionChanged">
+                <x:String>Blue</x:String>
+                <x:String>Purple</x:String>
+                <x:String>Green</x:String>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>
