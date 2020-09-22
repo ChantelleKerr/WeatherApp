@@ -1,6 +1,6 @@
 # Weather App using OpenWeatherMap
 
-## Setup your API
+## Get your API Key
 go to [Open Weather Map Website](https://openweathermap.org/api)
 follow the sign up prompts to get your free API key
 
